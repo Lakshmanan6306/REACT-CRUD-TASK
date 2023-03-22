@@ -1,23 +1,35 @@
-import logo from './logo.svg';
 import './App.css';
+import { Baseapp } from './Base/Baseapp';
+import { Route, Switch } from 'react-router-dom';
+import { Adduser } from './Components/Adduser';
+import { Data } from "./data/Data";
+import React, { useState } from "react";
+import { Viewdata } from './Components/Viewdata';
+import { Nopage } from './Components/Nopage';
+import { Edituser } from './Components/Edituser';
 
 function App() {
+  const [user, setUser] = useState(Data);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Switch>
+      <Route exact path={"/"}>
+        <Baseapp user={user} setUser={setUser}/>
+      </Route>
+      <Route path="/Adduser">
+        <Adduser user={user} setUser={setUser}/>
+      </Route>
+      <Route path="/Viewdata/:id">
+        <Viewdata  user={user} setUser={setUser}/>
+      </Route>
+      <Route path={"/edit/:id"}>
+        <Edituser user={user} setUser={setUser}/>
+      </Route>
+      <Route path="/**">
+        <Nopage/>
+      </Route>
+      </Switch>
+      
     </div>
   );
 }

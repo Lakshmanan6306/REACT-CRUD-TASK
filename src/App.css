@@ -1,38 +1,142 @@
 .App {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.parent{ 
+  box-sizing: border-box;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header{
+  position: relative;
+  top: 0;
+  background-color: rgb(222, 136, 16);
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  color: white;
+  text-align: start;
+}
+.head{
+  width: 60%;
+}
+.navbar{
+  width: 40%;
+  text-align: end;
+}
+.navbar ul{
+  list-style-type: none;
+  
+}
+.navbar ul li{
+  display: inline;
+  margin: 10px;
+}
+.navbar ul li button{
+  padding: 15px 15px;
+  border-radius: 10px;
+  border: none;
+  background-color: inherit;
+  font-size: 18px;
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.navbar ul li button:hover{
+  background-color: aliceblue;
+  color: black;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.content{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  background-color: darkgrey;
+}
+.user-content{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin: 50px 20px;
+}
+.user-card{
+  border: 1px solid none;
+  width: 230px;
+  height: 230px;
+  border-radius: 15px;
+  background-color: white;
+}
+.user-card button{
+  margin: 2px;
+  width: 50px;
+  height: 30px;
+  border-radius: 5px;
+  border: none;
+  background-color: darkgray ;
+}
+.user-card .view:hover{
+  background-color: blue;
+  color: aliceblue;
+}
+.user-card .edit:hover{
+  background-color: rgb(0, 218, 0);
+  color: aliceblue;
+}
+.user-card .del:hover{
+  background-color: orangered;
+  color: aliceblue;
+}
+.footer{
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(222, 136, 16);
+  display: flex;
+  justify-content: center;
+  color: aliceblue;
+}
+.newuser{
+  display: flex;
+  flex-direction: column;
+  margin: 5rem 0;
+  gap: 1rem;
+  padding: 50px;
+  border: 1px solid none;
+  border-radius: 15px;
+  box-shadow:10px 10px #888888 ;
+  background-color: #3C3B3F;
+}
+.newuser input{
+  padding: 10px 20px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  background-color: #616057;
+  box-shadow:2px 3px 2px 2px #888888 ;
+  color: white;
+  font-size: 15px;
+}
+.newuser .btn{
+  padding: 10px 20px;
+  background-color:  #fc4a1a;
+  color: white;
+  border: none;
+  border-radius: 15px;
+}
+.newuser .btn:hover{
+  background-color: darkblue;
+}
+.nopage{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(to right, #283c86,#636FA4);
+  color: white;
+  height: 100vh;
+} 
+.nopage button{
+  padding: 10px 30px;
+  border: none;
+  background-color: #9a060b;
+  color: aliceblue;
+  font-size: 18px;
+  font-weight: 300;
+}
+.nopage button:hover{
+  background-color: #061161;
 }
